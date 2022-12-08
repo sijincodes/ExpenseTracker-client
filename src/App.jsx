@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import SignupPage from "./pages/SignupPage/SignupPage";
+import SignUp from "./pages/SignupPage/SignUp";
 import LoginPage from "./pages/LoginPage/LoginPage";
 
 import Navbar from "./components/Navbar/Navbar";
@@ -13,7 +14,7 @@ import IsAnon from "./components/IsAnon/IsAnon";
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -31,7 +32,8 @@ function App() {
           path="/signup"
           element={
             <IsAnon>
-              <SignupPage />
+              {/* <SignupPage /> */}
+              <SignUp />
             </IsAnon>
           }
         />
