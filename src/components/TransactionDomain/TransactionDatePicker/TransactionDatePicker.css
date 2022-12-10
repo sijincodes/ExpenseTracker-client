@@ -1,0 +1,9 @@
+.datePickerWidth{
+    width:150px;
+}
+
+@media(max-width:820px) {
+    .datePickerWidth{
+    width:120px;
+    }
+}
