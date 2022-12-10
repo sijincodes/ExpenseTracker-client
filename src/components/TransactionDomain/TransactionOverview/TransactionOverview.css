@@ -1,0 +1,34 @@
+.transactionOverviewContainer{
+    padding: 20px 10px 10px;
+}
+.transactionSpan{
+    display: flex;
+    flex-direction: column;
+   
+}
+.spanTitle{
+    color: #a4a3a6;
+    font-size: 10px;
+    font-weight: bold;
+}
+.spanContent{
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.spanContainer{
+    display: flex;
+}
+.columnContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.columnFlexEnd{
+    align-items: flex-end;
+}
+
+.divider{
+    margin-top: 5px;
+}
