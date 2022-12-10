@@ -2,7 +2,7 @@ import React from "react";
 import "./../../styles/common.css";
 import LogInCard from "../../components/LogInCard/LogInCard";
 
-const LogInPage = () => {
+const LoginPage = () => {
   return (
     <>
       <div className="mask rgba-gradient align-items-center">
@@ -26,4 +26,4 @@ const LogInPage = () => {
   );
 };
 
-export default LogInPage;
+export default LoginPage;

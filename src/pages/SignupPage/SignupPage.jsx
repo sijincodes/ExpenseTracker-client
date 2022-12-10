@@ -3,7 +3,7 @@ import "./../../styles/common.css";
 
 import SignUpCard from "../../components/SignUpCard/SignUpCard";
 
-const SignUpPage = () => {
+const SignupPage = () => {
   return (
     <>
       <div className="mask rgba-gradient align-items-center">
@@ -27,4 +27,4 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
+export default SignupPage;
