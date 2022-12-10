@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import AddIcon from "../AddIcon/AddIcon";
 import TransactionDatePicker from "../TransactionDatePicker/TransactionDatePicker";
+import TransactionForm from "../TransactionForm/TransactionForm";
 
 import "./TransactionHeader.css";
 
@@ -17,7 +18,7 @@ function TransactionHeader() {
       <Row>
         <Col className="columnFlex columnSpaced">
           <div>
-            {/* Here we can add a component that can render heaing based on props for reusability */}
+            {/* Here we can add a component that can render heading based on props for reusability */}
             <span style={{ fontSize: "20px" }}>
               <strong>Daily Transaction</strong>
             </span>
@@ -30,7 +31,9 @@ function TransactionHeader() {
       </Row>
       {isCreateTransactionClicked && (
         <Row>
-          <Col>Transaction Form</Col>
+          <Col>
+            <TransactionForm hideForm={toggleCreateTransaction} />
+          </Col>
         </Row>
       )}
     </Container>
