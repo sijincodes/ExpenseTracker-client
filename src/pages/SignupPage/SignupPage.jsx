@@ -6,7 +6,7 @@ import SignUpCard from "../../components/SignUpCard/SignUpCard";
 const SignupPage = () => {
   return (
     <>
-      <div className="mask rgba-gradient align-items-center">
+      <div className="mask rgba-gradient align-items-center authpage">
         <div className="container">
           <div className="row">
             <div className="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5">
