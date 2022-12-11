@@ -1,0 +1,11 @@
+.pieCardDetails{
+    display: flex;
+    flex-direction: column;
+}
+.pieCardRow{
+    width:100%
+}
+.pieCardPercentValue{
+    display: flex;
+    justify-content: flex-end;
+}

@@ -3,14 +3,14 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import "./AnalyticsGraphCard.css";
 
-function AnalyticsGraphCard({transactionType,transaction,transactionAmount}) {
+function AnalyticsGraphCard({transactionType,graph,transactionAmount}) {
   return (
     <>
       <Container className="analyticsGraphCardContainer">
         <Row>
           <Col className="analyticsCard">
             <span>{transactionType}</span>
-            <span>{transaction}</span>
+            <span>{graph}</span>
             <span>{transactionAmount}</span>
           </Col>
         </Row>
