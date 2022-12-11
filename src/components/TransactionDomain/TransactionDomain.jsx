@@ -1,6 +1,6 @@
 import React from "react";
 import SearchBox from "./SearchBox/SearchBox";
-import TransactionCard from "./TransactionCard/TransactionCard";
+import TransactionGroupAccordian from "./TransactionGroupAccordian/TransactionGroupAccordian";
 import TransactionHeader from "./TransactionHeader/TransactionHeader";
 import TransactionOverview from "./TransactionOverview/TransactionOverview";
 
@@ -10,7 +10,7 @@ function TransactionDomain() {
       <TransactionHeader />
       <SearchBox />
       <TransactionOverview />
-      <TransactionCard />
+      <TransactionGroupAccordian transactions={[]} />
     </>
   );
 }

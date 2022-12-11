@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 
 import "./TransactionCard.css";
 
-function TransactionCard() {
+function TransactionCard({transaction}) {
   const [isEditable, setIsEditable] = useState(false);
 
   const updateTransaction = () => {

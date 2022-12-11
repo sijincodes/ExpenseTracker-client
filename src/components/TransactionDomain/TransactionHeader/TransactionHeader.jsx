@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import AddIcon from "../AddIcon/AddIcon";
+import RemoveIcon from "../RemoveIcon/RemoveIcon";
 import TransactionDatePicker from "../TransactionDatePicker/TransactionDatePicker";
 import TransactionForm from "../TransactionForm/TransactionForm";
 
@@ -25,7 +26,11 @@ function TransactionHeader() {
           </div>
           <div className="columnFlex columnSpaced">
             <TransactionDatePicker />
-            <AddIcon handleClick={toggleCreateTransaction} />
+            {isCreateTransactionClicked ? (
+              <RemoveIcon handleClick={toggleCreateTransaction} />
+            ) : (
+              <AddIcon handleClick={toggleCreateTransaction} />
+            )}
           </div>
         </Col>
       </Row>
