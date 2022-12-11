@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import TransactionCard from "../TransactionCard/TransactionCard";
 
-export default function TransactionAccordian({
+export default function TransactionAccordion({
   transactionType,
   transactions,
 }) {
