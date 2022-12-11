@@ -17,6 +17,8 @@ function TransactionTextField() {
         variant="outlined"
         fullWidth
         size="small"
+        type={"number"}
+        
       />
     </>
   );

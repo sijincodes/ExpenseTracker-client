@@ -2,7 +2,7 @@
     padding: 20px 10px 10px;
 }
 
-.inputBox{
+.searchBoxInputBox{
     width: 100%;
     border: 0px solid;
     background-color: rgb(246, 243, 243);
@@ -10,10 +10,10 @@
     border-radius: 5px;
 }
 
-.inputBox:focus{
+.searchBoxInputBox:focus{
     outline: none;
 }
 
-.inputBox::placeholder { 
+.searchBoxInputBox::placeholder { 
     color: gray;
   }

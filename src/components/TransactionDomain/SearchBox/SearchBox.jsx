@@ -10,7 +10,7 @@ function SearchBox() {
       <Row>
         <Col>
           <input
-            className="inputBox"
+            className="searchBoxInputBox"
             type="text"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
