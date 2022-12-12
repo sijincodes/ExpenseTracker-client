@@ -4,6 +4,7 @@ import AddIcon from "../AddIcon/AddIcon";
 import RemoveIcon from "../RemoveIcon/RemoveIcon";
 import TransactionDatePicker from "../TransactionDatePicker/TransactionDatePicker";
 import TransactionForm from "../TransactionForm/TransactionForm";
+import TransactionHeaderDropdown from "../TransactionHeaderDropdown/TransactionHeaderDropdown";
 
 import "./TransactionHeader.css";
 
@@ -20,9 +21,10 @@ function TransactionHeader() {
         <Col className="columnFlex columnSpaced">
           <div>
             {/* Here we can add a component that can render heading based on props for reusability */}
-            <span style={{ fontSize: "20px" }}>
+            {/* <span style={{ fontSize: "20px" }}>
               <strong>Daily Transaction</strong>
-            </span>
+            </span> */}
+            <TransactionHeaderDropdown />
           </div>
           <div className="columnFlex columnSpaced">
             <TransactionDatePicker />
