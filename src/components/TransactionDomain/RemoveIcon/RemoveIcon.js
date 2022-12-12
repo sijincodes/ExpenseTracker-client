@@ -3,7 +3,7 @@ import "./RemoveIcon.css";
 
 function RemoveIcon({ handleClick }) {
   return (
-    <span class="material-icons remove-button-style" onClick={handleClick}>
+    <span className="material-icons remove-button-style" onClick={handleClick}>
       remove_circle
     </span>
   );

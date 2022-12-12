@@ -7,7 +7,7 @@ import "./AnalyticsCategoryPieCard.css"
 function AnalyticsCategoryPieCard({pie,category,amount,percent}) {
   return (
     <>
-      <Container className="analyticsGraphCardContainer">
+      <Container className="analyticsCategoryPieCardContainer">
         <Row className="pieCardRow">
           <Col className="analyticsPieCard">
             {/* <span>{pie}</span> */}
