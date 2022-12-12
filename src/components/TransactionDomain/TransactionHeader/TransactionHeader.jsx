@@ -12,6 +12,8 @@ function TransactionHeader() {
   const [isCreateTransactionClicked, setIsCreateTransactionClicked] =
     useState(false);
 
+  const [transactionTime, setTransactionTime] = useState(1);
+
   const toggleCreateTransaction = () => {
     setIsCreateTransactionClicked(!isCreateTransactionClicked);
   };
@@ -21,13 +23,13 @@ function TransactionHeader() {
         <Col className="columnFlex columnSpaced">
           <div>
             {/* Here we can add a component that can render heading based on props for reusability */}
-            {/* <span style={{ fontSize: "20px" }}>
-              <strong>Daily Transaction</strong>
-            </span> */}
-            <TransactionHeaderDropdown />
+            <TransactionHeaderDropdown
+              transactionTime={transactionTime}
+              setTransactionTime={setTransactionTime}
+            />
           </div>
           <div className="columnFlex columnSpaced">
-            <TransactionDatePicker />
+            <TransactionDatePicker transactionTime={transactionTime} />
             {isCreateTransactionClicked ? (
               <RemoveIcon handleClick={toggleCreateTransaction} />
             ) : (

@@ -3,13 +3,10 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import "./TransactionHeaderDropdown.css";
-// theme.menu.containerBackgroundColor = '#303030';
-function TransactionHeaderDropdown() {
-  const [transaction, setTransaction] = React.useState("");
 
+function TransactionHeaderDropdown({ transactionTime, setTransactionTime }) {
   const handleChange = (event) => {
-    setTransaction(event.target.value);
+    setTransactionTime(event.target.value);
   };
 
   return (
@@ -19,7 +16,7 @@ function TransactionHeaderDropdown() {
         <Select
           labelId="select-transaction-label-id"
           id="select-standard"
-          value={transaction}
+          value={transactionTime}
           onChange={handleChange}
           label="Transaction"
           inputProps={{
@@ -32,9 +29,6 @@ function TransactionHeaderDropdown() {
             },
           }}
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
           <MenuItem value={1}>Daily</MenuItem>
           <MenuItem value={2}>Monthly</MenuItem>
           <MenuItem value={3}>Yearly</MenuItem>
