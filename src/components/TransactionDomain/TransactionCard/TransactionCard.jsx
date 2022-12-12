@@ -41,35 +41,17 @@ function TransactionCard({ transaction }) {
 
           <div className="transactionButtonCardContainer">
             <div>
-              {/* <EditIcon updateTransaction={updateTransaction}/> */}
-
-              {/* if pencil is clicked tick nd X appears
-            if tick is clicked updated info is displayed and is X user is taken back to pencil and bin */}
-
-              {/* if bin is clicked tick and X appears
-            and if tick is clicks, updated info if X is clicked pencil and bin appears */}
-
-              {/* pencil = <EditIcon updateTransaction={updateTransaction}/>
-            bin = <span className="material-icons marginIcon">delete</span>
-
-            tick = <Icons text="done"/>
-            X = <Icons text="close"/> */}
-
               {isEditable ? (
                 <>
-                  <Icons text="done" />
+                  <Icons text="done" updateTransaction={updateTransaction} />
                   <Icons text="close" updateTransaction={updateTransaction} />
                 </>
-              ) : (<>
-                
-                 <EditIcon updateTransaction={updateTransaction}/>
-                  <Icons text="delete"/> 
-                  </>)
-                
-              }
-              {/* when tick is clicked return back to pencil nd bin */}
-             
-              {/* <span className="material-icons marginIcon">delete</span> */}
+              ) : (
+                <>
+                  <EditIcon updateTransaction={updateTransaction} />
+                  <Icons text="delete" />
+                </>
+              )}
             </div>
           </div>
         </Col>
