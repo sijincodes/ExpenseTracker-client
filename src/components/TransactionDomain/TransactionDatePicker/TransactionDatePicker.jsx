@@ -4,12 +4,29 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 import "./TransactionDatePicker.css";
 
-function TransactionDatePicker() {
+function TransactionDatePicker({ transactionTime }) {
   const [value, setValue] = useState(new Date());
+  let views = [];
+  let label = "";
+  switch (transactionTime) {
+    case 2:
+      label = "Year and Month";
+      views = ["year", "month"];
+      break;
+    case 3:
+      label = "Year";
+      views = ["year"];
+      break;
+    default:
+      label = "Date";
+      views = ["year", "month", "day"];
+  }
+
   return (
     <DatePicker
       className="datePickerWidth"
-      label="Date"
+      label={label}
+      views={views}
       value={value}
       onChange={(newValue) => {
         setValue(newValue);
