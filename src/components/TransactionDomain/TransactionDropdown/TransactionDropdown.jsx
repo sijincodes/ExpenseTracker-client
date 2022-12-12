@@ -5,10 +5,10 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
 function TransactionDropdown({ categories }) {
-  const [category, setCategory] = useState("");
+  const [selectedCategory, setselectedCategory] = useState("");
 
   const handleChange = (event) => {
-    setCategory(event.target.value);
+    setselectedCategory(event.target.value);
   };
 
   return (
@@ -18,7 +18,7 @@ function TransactionDropdown({ categories }) {
         <Select
           labelId="category-select-label"
           id="category-select"
-          value={category}
+          value={selectedCategory}
           label="Category"
           onChange={handleChange}
         >

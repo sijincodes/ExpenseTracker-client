@@ -20,7 +20,7 @@ function TransactionCard({ transaction, transactionTime }) {
         <Row className="firstRowContainer">
           <Col>
             <div className="firstRowWrapper">
-              <span class="dateText">12/2/2022</span>
+              <span className="dateText">12/2/2022</span>
             </div>
           </Col>
         </Row>
