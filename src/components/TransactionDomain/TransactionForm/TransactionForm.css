@@ -15,7 +15,8 @@
 }
 
 body{
-    background-color: #eee3df; 
+    /* background-color: #eee3df;  */
+    background-color: white; 
 }
 .transactionButtonContainer{
     width: 100%;

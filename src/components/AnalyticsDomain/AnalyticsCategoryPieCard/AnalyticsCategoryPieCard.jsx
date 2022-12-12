@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import AnalyticsPieGraph from "./../AnalyticsPieGraph/AnalyticsPieGraph"
 
 import "./AnalyticsCategoryPieCard.css"
 
@@ -9,7 +10,8 @@ function AnalyticsCategoryPieCard({pie,category,amount,percent}) {
       <Container className="analyticsGraphCardContainer">
         <Row className="pieCardRow">
           <Col className="analyticsPieCard">
-            <span>{pie}</span>
+            {/* <span>{pie}</span> */}
+            <AnalyticsPieGraph />
           </Col>
           <Col className="pieCardDetails">
             <span>{category}</span>

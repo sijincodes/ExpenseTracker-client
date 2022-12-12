@@ -3,14 +3,15 @@ import { Col, Container, Row } from "react-bootstrap";
 import TextField from "@mui/material/TextField";
 
 import "./TransactionCard.css";
+import EditIcon from "../EditIcon/EditIcon";
+import Icons from "../Icons/Icons";
 
-function TransactionCard({transaction}) {
+function TransactionCard({ transaction }) {
   const [isEditable, setIsEditable] = useState(false);
-
   const updateTransaction = () => {
     setIsEditable(!isEditable);
-    console.log(isEditable);
   };
+
   return (
     <Container className="transactionCardContainer">
       <Row className="cardRow">
@@ -35,19 +36,40 @@ function TransactionCard({transaction}) {
               size="small"
               defaultValue={50}
               type={"number"}
-             
             />
           </div>
 
           <div className="transactionButtonCardContainer">
             <div>
-              <span
-                className="material-icons marginIcon"
-                onClick={updateTransaction}
-              >
-                edit
-              </span>
-              <span className="material-icons marginIcon">delete</span>
+              {/* <EditIcon updateTransaction={updateTransaction}/> */}
+
+              {/* if pencil is clicked tick nd X appears
+            if tick is clicked updated info is displayed and is X user is taken back to pencil and bin */}
+
+              {/* if bin is clicked tick and X appears
+            and if tick is clicks, updated info if X is clicked pencil and bin appears */}
+
+              {/* pencil = <EditIcon updateTransaction={updateTransaction}/>
+            bin = <span className="material-icons marginIcon">delete</span>
+
+            tick = <Icons text="done"/>
+            X = <Icons text="close"/> */}
+
+              {isEditable ? (
+                <>
+                  <Icons text="done" />
+                  <Icons text="close" updateTransaction={updateTransaction} />
+                </>
+              ) : (<>
+                
+                 <EditIcon updateTransaction={updateTransaction}/>
+                  <Icons text="delete"/> 
+                  </>)
+                
+              }
+              {/* when tick is clicked return back to pencil nd bin */}
+             
+              {/* <span className="material-icons marginIcon">delete</span> */}
             </div>
           </div>
         </Col>

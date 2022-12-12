@@ -4,8 +4,8 @@ import AnalyticsGraphCard from '../AnalyticsGraphCard/AnalyticsGraphCard'
 function AnalyticsGroupGraphCard({props}) {
   return (
     <div style={{ paddingTop: "20px" }}>
-      <AnalyticsGraphCard transactionType={"Expense"} graph={"Graph"} transactionAmount={'340'}/>
-      <AnalyticsGraphCard transactionType={"Income"} graph={"Graph"} transactionAmount={'540'}/>
+      <AnalyticsGraphCard transactionType={"Expense"}  transactionAmount={'340'}/>
+      <AnalyticsGraphCard transactionType={"Income"}  transactionAmount={'540'}/>
     </div>
   )
 }
