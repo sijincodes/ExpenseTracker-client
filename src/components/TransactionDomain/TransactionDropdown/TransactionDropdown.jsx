@@ -4,7 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-function TransactionDropdown() {
+function TransactionDropdown({ categories }) {
   const [category, setCategory] = useState("");
 
   const handleChange = (event) => {
@@ -22,8 +22,13 @@ function TransactionDropdown() {
           label="Category"
           onChange={handleChange}
         >
-          <MenuItem value={10}>Category1</MenuItem>
-          <MenuItem value={20}>Category2</MenuItem>
+          {categories.map((category) => {
+            return (
+              <MenuItem key={category._id} value={category._id}>
+                {category.categoryName}
+              </MenuItem>
+            );
+          })}
         </Select>
       </FormControl>
     </>
