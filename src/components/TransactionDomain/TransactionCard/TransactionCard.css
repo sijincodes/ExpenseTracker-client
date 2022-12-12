@@ -13,6 +13,22 @@
        
 }
 
+.firstRowContainer{
+    width: 100%;
+}
+.firstRowWrapper{
+    display: flex;
+    justify-content: flex-start;
+
+}
+.dateText{
+    font-size:12px;
+    color :#949494;
+    padding-top: 0;
+    padding-bottom: 15px;
+
+}
+
 .transactionButtonCardContainer{
     width: 100%;
     display: flex;
@@ -47,7 +63,8 @@
 
 @media(max-width: 820px){
     .transactionCardContainer{
-        padding-top: 30px;
+        padding-top: 10px;
+        padding-bottom: 0px;
     }
 	.transactionButtonCardContainer {
         justify-content: flex-end;

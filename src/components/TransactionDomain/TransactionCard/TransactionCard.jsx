@@ -6,14 +6,25 @@ import "./TransactionCard.css";
 import EditIcon from "../EditIcon/EditIcon";
 import Icons from "../Icons/Icons";
 
-function TransactionCard({ transaction }) {
+function TransactionCard({ transaction, transactionTime }) {
   const [isEditable, setIsEditable] = useState(false);
+
+  const shouldDateBeDisplayed = transactionTime === 2 || transactionTime === 3;
   const updateTransaction = () => {
     setIsEditable(!isEditable);
   };
 
   return (
     <Container className="transactionCardContainer">
+      {shouldDateBeDisplayed && (
+        <Row className="firstRowContainer">
+          <Col>
+            <div className="firstRowWrapper">
+              <span class="dateText">12/2/2022</span>
+            </div>
+          </Col>
+        </Row>
+      )}
       <Row className="cardRow">
         <Col className="cardCol">
           <div className="innerCard">

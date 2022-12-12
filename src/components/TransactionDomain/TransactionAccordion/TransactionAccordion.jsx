@@ -9,6 +9,7 @@ import TransactionCard from "../TransactionCard/TransactionCard";
 export default function TransactionAccordion({
   transactionType,
   transactions,
+  transactionTime,
 }) {
   return (
     <div style={{ marginBottom: "7px" }}>
@@ -22,7 +23,11 @@ export default function TransactionAccordion({
         </AccordionSummary>
         <AccordionDetails>
           {transactions.map((transaction, index) => (
-            <TransactionCard key={index} transaction={transaction} />
+            <TransactionCard
+              key={index}
+              transaction={transaction}
+              transactionTime={transactionTime}
+            />
           ))}
         </AccordionDetails>
       </Accordion>

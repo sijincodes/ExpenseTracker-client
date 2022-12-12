@@ -8,11 +8,9 @@ import TransactionHeaderDropdown from "../TransactionHeaderDropdown/TransactionH
 
 import "./TransactionHeader.css";
 
-function TransactionHeader() {
+function TransactionHeader({ transactionTime, setTransactionTime }) {
   const [isCreateTransactionClicked, setIsCreateTransactionClicked] =
     useState(false);
-
-  const [transactionTime, setTransactionTime] = useState(1);
 
   const toggleCreateTransaction = () => {
     setIsCreateTransactionClicked(!isCreateTransactionClicked);
