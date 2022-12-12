@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 
 import "./TransactionCard.css";
 
-function TransactionCard({transaction}) {
+function TransactionCard({ transaction }) {
   const [isEditable, setIsEditable] = useState(false);
 
   const updateTransaction = () => {
@@ -13,12 +13,20 @@ function TransactionCard({transaction}) {
   };
   return (
     <Container className="transactionCardContainer">
+      <Row className="firstRowContainer">
+        <Col>
+          <div className="firstRowWrapper">
+            <span class="dateText">12/2/2022</span>
+          </div>
+        </Col>
+      </Row>
       <Row className="cardRow">
         <Col className="cardCol">
           <div className="innerCard">
             <span className="material-icons " style={{ margin: "0 10px" }}>
               shopping_cart
             </span>
+
             <TextField
               className="descriptionTextField"
               disabled={!isEditable}
@@ -35,7 +43,6 @@ function TransactionCard({transaction}) {
               size="small"
               defaultValue={50}
               type={"number"}
-             
             />
           </div>
 
