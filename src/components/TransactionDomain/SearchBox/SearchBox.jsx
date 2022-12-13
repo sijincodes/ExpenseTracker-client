@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
 import "./SearchBox.css";
 
-function SearchBox() {
-  const [searchText, setSearchText] = useState("");
+function SearchBox({setSearchQuery,searchQuery}) {
+ 
   return (
     <Container className="searchBoxContainer">
       <Row>
@@ -12,8 +12,8 @@ function SearchBox() {
           <input
             className="searchBoxInputBox"
             type="text"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search"
           />
         </Col>

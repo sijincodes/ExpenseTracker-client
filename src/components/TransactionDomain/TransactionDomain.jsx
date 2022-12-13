@@ -11,6 +11,12 @@ function TransactionDomain() {
   const [transactionTime, setTransactionTime] = useState(1);
   const [transactionList, setTransactionList] = useState([]);
   const [userSelectedDate, setUserSelectedDate] = useState(new Date());
+  const [searchQuery, setSearchQuery] = useState("");
+  const filteredTransactionList = transactionList.filter((elm) => {
+    return elm.transactionDescription
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
+  });
 
   function generateTransactionFetchURL(transactionTime, userSelectedDate) {
     const selectedDate = userSelectedDate.toISOString().split("T")[0];
@@ -54,15 +60,15 @@ function TransactionDomain() {
       <TransactionHeader
         transactionTime={transactionTime}
         setTransactionTime={setTransactionTime}
-        transactionList={transactionList}
+        transactionList={filteredTransactionList}
         setTransactionList={setTransactionList}
         userSelectedDate={userSelectedDate}
         setUserSelectedDate={setUserSelectedDate}
       />
-      <SearchBox />
-      <TransactionOverview transactions={transactionList} />
+      <SearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <TransactionOverview transactions={filteredTransactionList} />
       <TransactionGroupAccordion
-        transactions={transactionList}
+        transactions={filteredTransactionList}
         transactionTime={transactionTime}
         setTransactionList={setTransactionList}
       />
