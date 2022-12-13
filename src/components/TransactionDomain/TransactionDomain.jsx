@@ -47,7 +47,7 @@ function TransactionDomain() {
       setTransactionList(result.data);
     };
     fetchTransactions();
-  }, [transactionTime, userSelectedDate]);
+  }, [transactionTime, userSelectedDate, setTransactionList]);
 
   return (
     <>
@@ -60,10 +60,11 @@ function TransactionDomain() {
         setUserSelectedDate={setUserSelectedDate}
       />
       <SearchBox />
-      <TransactionOverview transactions={transactionList}/>
+      <TransactionOverview transactions={transactionList} />
       <TransactionGroupAccordion
         transactions={transactionList}
         transactionTime={transactionTime}
+        setTransactionList={setTransactionList}
       />
     </>
   );

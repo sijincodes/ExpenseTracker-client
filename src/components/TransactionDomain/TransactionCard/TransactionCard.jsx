@@ -1,17 +1,35 @@
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import axios from "axios";
 import TextField from "@mui/material/TextField";
 
 import "./TransactionCard.css";
 import EditIcon from "../EditIcon/EditIcon";
 import Icons from "../Icons/Icons";
+import { baseUrl } from "../../../consts";
 
-function TransactionCard({ transaction, transactionTime }) {
+function TransactionCard({ transaction, transactionTime, setTransactionList }) {
   const [isEditable, setIsEditable] = useState(false);
+  const [updatedDesription, setUpdatedDesription] = useState(
+    transaction.transactionDescription
+  );
+  const [updatedAmount, setUpdatedAmount] = useState(
+    transaction.transactionAmount
+  );
 
   const shouldDateBeDisplayed = transactionTime === 2 || transactionTime === 3;
-  const updateTransaction = () => {
+  const toggleEdit = () => {
     setIsEditable(!isEditable);
+  };
+
+  const deleteTransaction = async (id) => {
+    const authToken = localStorage.getItem("authToken");
+    await axios.delete(`${baseUrl}/transaction/${id}`, {
+      headers: { Authorization: `Bearer ${authToken}` },
+    });
+    setTransactionList((prevTransactions) =>
+      prevTransactions.filter((transaction) => transaction._id !== id)
+    );
   };
 
   return (
@@ -39,7 +57,8 @@ function TransactionCard({ transaction, transactionTime }) {
               id="outlined-disabled"
               label="Description"
               size="small"
-              value={transaction.transactionDescription}
+              value={updatedDesription}
+              onChange={(e) => setUpdatedDesription(e.target.value)}
             />
             <TextField
               style={{ margin: "0 10px" }}
@@ -47,7 +66,8 @@ function TransactionCard({ transaction, transactionTime }) {
               id="outlined-disabled"
               label="Amount"
               size="small"
-              value={transaction.transactionAmount}
+              value={updatedAmount}
+              onChange={(e) => setUpdatedAmount(e.target.value)}
               type={"number"}
             />
           </div>
@@ -56,13 +76,23 @@ function TransactionCard({ transaction, transactionTime }) {
             <div>
               {isEditable ? (
                 <>
-                  <Icons text="done" updateTransaction={updateTransaction} />
-                  <Icons text="close" updateTransaction={updateTransaction} />
+                  <Icons text="done" handleClick={toggleEdit} />
+                  <Icons
+                    text="close"
+                    handleClick={() => {
+                      setUpdatedDesription(transaction.transactionDescription);
+                      setUpdatedAmount(transaction.transactionAmount);
+                      toggleEdit();
+                    }}
+                  />
                 </>
               ) : (
                 <>
-                  <EditIcon updateTransaction={updateTransaction} />
-                  <Icons text="delete" />
+                  <EditIcon handleClick={toggleEdit} />
+                  <Icons
+                    text="delete"
+                    handleClick={() => deleteTransaction(transaction._id)}
+                  />
                 </>
               )}
             </div>

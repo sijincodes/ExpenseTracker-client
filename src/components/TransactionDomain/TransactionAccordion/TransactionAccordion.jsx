@@ -10,6 +10,7 @@ export default function TransactionAccordion({
   transactionType,
   transactions,
   transactionTime,
+  setTransactionList,
 }) {
   return (
     <div style={{ marginBottom: "7px" }}>
@@ -27,6 +28,7 @@ export default function TransactionAccordion({
               key={transaction._id}
               transaction={transaction}
               transactionTime={transactionTime}
+              setTransactionList={setTransactionList}
             />
           ))}
         </AccordionDetails>

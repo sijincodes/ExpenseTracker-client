@@ -1,7 +1,11 @@
 import React from "react";
 import TransactionAccordion from "../TransactionAccordion/TransactionAccordion";
 
-function TransactionGroupAccordion({ transactions, transactionTime }) {
+function TransactionGroupAccordion({
+  transactions,
+  transactionTime,
+  setTransactionList,
+}) {
   return (
     <div style={{ paddingTop: "20px" }}>
       <TransactionAccordion
@@ -10,6 +14,7 @@ function TransactionGroupAccordion({ transactions, transactionTime }) {
           (transaction) => transaction.transactionType === "income"
         )}
         transactionTime={transactionTime}
+        setTransactionList={setTransactionList}
       />
       <TransactionAccordion
         transactionType={"Expense"}
@@ -17,6 +22,7 @@ function TransactionGroupAccordion({ transactions, transactionTime }) {
           (transaction) => transaction.transactionType === "expense"
         )}
         transactionTime={transactionTime}
+        setTransactionList={setTransactionList}
       />
     </div>
   );

@@ -1,9 +1,9 @@
 import React from "react";
 
-function Icons({ text, updateTransaction }) {
+function Icons({ text, handleClick }) {
   return (
     <>
-      <span className="material-icons marginIcon" onClick={updateTransaction}>
+      <span className="material-icons marginIcon" onClick={handleClick}>
         {text}
       </span>
     </>

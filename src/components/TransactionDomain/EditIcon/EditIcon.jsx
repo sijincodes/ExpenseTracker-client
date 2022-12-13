@@ -1,10 +1,10 @@
 import React from "react";
-import "./EditIcon.css"
+import "./EditIcon.css";
 
-function EditIcon({updateTransaction}) {
+function EditIcon({ handleClick }) {
   return (
     <>
-      <span className="material-icons marginIcon" onClick={updateTransaction}>
+      <span className="material-icons marginIcon" onClick={handleClick}>
         edit
       </span>
     </>
