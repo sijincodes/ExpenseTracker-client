@@ -31,7 +31,7 @@ function TransactionHeader({ transactionTime, setTransactionTime }) {
             {isCreateTransactionClicked ? (
               <RemoveIcon handleClick={toggleCreateTransaction} />
             ) : (
-              <AddIcon handleClick={toggleCreateTransaction} />
+              <AddIcon handleClick={toggleCreateTransaction} transactionTime={transactionTime}/>
             )}
           </div>
         </Col>
