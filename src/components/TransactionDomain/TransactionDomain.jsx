@@ -60,7 +60,7 @@ function TransactionDomain() {
         setUserSelectedDate={setUserSelectedDate}
       />
       <SearchBox />
-      <TransactionOverview />
+      <TransactionOverview transactions={transactionList}/>
       <TransactionGroupAccordion
         transactions={transactionList}
         transactionTime={transactionTime}
