@@ -5,7 +5,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import "./TransactionDatePicker.css";
 
 function TransactionDatePicker({ transactionTime }) {
-  const [value, setValue] = useState(new Date());
+  const [userSelectedDate, setUserSelectedDate] = useState(new Date());
   let views = [];
   let label = "";
   switch (transactionTime) {
@@ -27,9 +27,9 @@ function TransactionDatePicker({ transactionTime }) {
       className="datePickerWidth"
       label={label}
       views={views}
-      value={value}
-      onChange={(newValue) => {
-        setValue(newValue);
+      value={userSelectedDate}
+      onChange={(seletedDate) => {
+        setUserSelectedDate(seletedDate);
       }}
       renderInput={(params) => <TextField size="small" {...params} />}
     />

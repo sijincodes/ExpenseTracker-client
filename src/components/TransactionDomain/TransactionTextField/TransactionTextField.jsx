@@ -1,7 +1,12 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 
-function TransactionTextField() {
+function TransactionTextField({
+  transactionDescription,
+  setTransactionDescription,
+  transactionAmount,
+  setTransactionAmount,
+}) {
   return (
     <>
       <TextField
@@ -10,6 +15,8 @@ function TransactionTextField() {
         variant="outlined"
         fullWidth
         size="small"
+        value={transactionDescription}
+        onChange={(e) => setTransactionDescription(e.target.value)}
       />
       <TextField
         id="outlined-basic"
@@ -18,7 +25,8 @@ function TransactionTextField() {
         fullWidth
         size="small"
         type={"number"}
-        
+        value={transactionAmount}
+        onChange={(e) => setTransactionAmount(e.target.value)}
       />
     </>
   );

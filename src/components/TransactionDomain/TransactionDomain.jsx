@@ -6,11 +6,18 @@ import TransactionOverview from "./TransactionOverview/TransactionOverview";
 
 function TransactionDomain() {
   const [transactionTime, setTransactionTime] = useState(1);
+  const [transactionList, setTransactionList] = useState([]);
+  const [userSelectedDate, setUserSelectedDate] = useState(new Date());
+
   return (
     <>
       <TransactionHeader
         transactionTime={transactionTime}
         setTransactionTime={setTransactionTime}
+        transactionList={transactionList}
+        setTransactionList={setTransactionList}
+        userSelectedDate={userSelectedDate}
+        setUserSelectedDate={setUserSelectedDate}
       />
       <SearchBox />
       <TransactionOverview />

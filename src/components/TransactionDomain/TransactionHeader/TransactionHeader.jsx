@@ -8,7 +8,14 @@ import TransactionHeaderDropdown from "../TransactionHeaderDropdown/TransactionH
 
 import "./TransactionHeader.css";
 
-function TransactionHeader({ transactionTime, setTransactionTime }) {
+function TransactionHeader({
+  transactionTime,
+  setTransactionTime,
+  transactionList,
+  setTransactionList,
+  userSelectedDate,
+  setUserSelectedDate,
+}) {
   const [isCreateTransactionClicked, setIsCreateTransactionClicked] =
     useState(false);
 
@@ -27,11 +34,18 @@ function TransactionHeader({ transactionTime, setTransactionTime }) {
             />
           </div>
           <div className="columnFlex columnSpaced">
-            <TransactionDatePicker transactionTime={transactionTime} />
+            <TransactionDatePicker
+              transactionTime={transactionTime}
+              userSelectedDate={userSelectedDate}
+              setUserSelectedDate={setUserSelectedDate}
+            />
             {isCreateTransactionClicked ? (
               <RemoveIcon handleClick={toggleCreateTransaction} />
             ) : (
-              <AddIcon handleClick={toggleCreateTransaction} transactionTime={transactionTime}/>
+              <AddIcon
+                handleClick={toggleCreateTransaction}
+                transactionTime={transactionTime}
+              />
             )}
           </div>
         </Col>
@@ -39,7 +53,12 @@ function TransactionHeader({ transactionTime, setTransactionTime }) {
       {isCreateTransactionClicked && (
         <Row>
           <Col>
-            <TransactionForm hideForm={toggleCreateTransaction} />
+            <TransactionForm
+              hideForm={toggleCreateTransaction}
+              userSelectedDate={userSelectedDate}
+              transactionList={transactionList}
+              setTransactionList={setTransactionList}
+            />
           </Col>
         </Row>
       )}

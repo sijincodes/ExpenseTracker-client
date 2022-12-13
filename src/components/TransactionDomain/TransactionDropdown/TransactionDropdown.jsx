@@ -4,9 +4,11 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-function TransactionDropdown({ categories }) {
-  const [selectedCategory, setselectedCategory] = useState("");
-
+function TransactionDropdown({
+  categories,
+  selectedCategory,
+  setselectedCategory,
+}) {
   const handleChange = (event) => {
     setselectedCategory(event.target.value);
   };
