@@ -16,7 +16,7 @@ function TransactionCard({ transaction, transactionTime, setTransactionList }) {
   const [updatedAmount, setUpdatedAmount] = useState(
     transaction.transactionAmount
   );
-
+  const [error, setError] = useState("");
   const shouldDateBeDisplayed = transactionTime === 2 || transactionTime === 3;
   const toggleEdit = () => {
     setIsEditable(!isEditable);
@@ -30,6 +30,23 @@ function TransactionCard({ transaction, transactionTime, setTransactionList }) {
     setTransactionList((prevTransactions) =>
       prevTransactions.filter((transaction) => transaction._id !== id)
     );
+  };
+
+  const updateTransaction = async (id) => {
+    const body = {
+      transactionDescription: updatedDesription,
+      transactionAmount: updatedAmount,
+    };
+
+    if (updatedDesription === "" || updatedAmount === 0) {
+      setError("Please provide all details");
+    } else {
+      const authToken = localStorage.getItem("authToken");
+      const result = await axios.put(`${baseUrl}/transaction/${id}`, body, {
+        headers: { Authorization: `Bearer ${authToken}` },
+      });
+      setTransactionList((transactionList) => [result, ...transactionList]);
+    }
   };
 
   return (
@@ -76,10 +93,16 @@ function TransactionCard({ transaction, transactionTime, setTransactionList }) {
             <div>
               {isEditable ? (
                 <>
-                  <Icons text="done" handleClick={toggleEdit} />
+                  <Icons
+                    text="done"
+                    handleClick={() => {
+                      updateTransaction(transaction._id);
+                      toggleEdit();
+                    }}
+                  />
                   <Icons
                     text="close"
-                    handleClick={() => {
+                    handleSubmit={() => {
                       setUpdatedDesription(transaction.transactionDescription);
                       setUpdatedAmount(transaction.transactionAmount);
                       toggleEdit();

@@ -8,7 +8,6 @@ import TransactionDropdown from "./../TransactionDropdown/TransactionDropdown";
 import TransactionTextField from "./../TransactionTextField/TransactionTextField";
 import { baseUrl } from "../../../consts";
 
-
 function TransactionForm({
   hideForm,
   transactionList,
@@ -55,6 +54,7 @@ function TransactionForm({
       const result = await axios.post(`${baseUrl}/transaction`, body, {
         headers: { Authorization: `Bearer ${authToken}` },
       });
+
       if (result.data) setTransactionList([...transactionList, body]);
       setTransactionDescription("");
       setTransactionAmount(0);
