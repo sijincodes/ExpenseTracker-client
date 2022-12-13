@@ -20,7 +20,9 @@ function TransactionCard({ transaction, transactionTime }) {
         <Row className="firstRowContainer">
           <Col>
             <div className="firstRowWrapper">
-              <span className="dateText">12/2/2022</span>
+              <span className="dateText">
+                {transaction.TransactionCreatedDate.split("T")[0]}
+              </span>
             </div>
           </Col>
         </Row>
@@ -37,7 +39,7 @@ function TransactionCard({ transaction, transactionTime }) {
               id="outlined-disabled"
               label="Description"
               size="small"
-              defaultValue="Zalando"
+              value={transaction.transactionDescription}
             />
             <TextField
               style={{ margin: "0 10px" }}
@@ -45,7 +47,7 @@ function TransactionCard({ transaction, transactionTime }) {
               id="outlined-disabled"
               label="Amount"
               size="small"
-              defaultValue={50}
+              value={transaction.transactionAmount}
               type={"number"}
             />
           </div>

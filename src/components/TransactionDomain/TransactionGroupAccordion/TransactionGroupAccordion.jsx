@@ -6,12 +6,16 @@ function TransactionGroupAccordion({ transactions, transactionTime }) {
     <div style={{ paddingTop: "20px" }}>
       <TransactionAccordion
         transactionType={"Income"}
-        transactions={[3, 4, 5]}
+        transactions={transactions.filter(
+          (transaction) => transaction.transactionType === "income"
+        )}
         transactionTime={transactionTime}
       />
       <TransactionAccordion
         transactionType={"Expense"}
-        transactions={[3, 4]}
+        transactions={transactions.filter(
+          (transaction) => transaction.transactionType === "expense"
+        )}
         transactionTime={transactionTime}
       />
     </div>

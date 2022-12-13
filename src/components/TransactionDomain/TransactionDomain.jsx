@@ -45,7 +45,6 @@ function TransactionDomain() {
         headers: { Authorization: `Bearer ${authToken}` },
       });
       setTransactionList(result.data);
-      console.log(result.data);
     };
     fetchTransactions();
   }, [transactionTime, userSelectedDate]);
@@ -63,7 +62,7 @@ function TransactionDomain() {
       <SearchBox />
       <TransactionOverview />
       <TransactionGroupAccordion
-        transactions={[]}
+        transactions={transactionList}
         transactionTime={transactionTime}
       />
     </>

@@ -22,9 +22,9 @@ export default function TransactionAccordion({
           <Typography>{transactionType}</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          {transactions.map((transaction, index) => (
+          {transactions.map((transaction) => (
             <TransactionCard
-              key={index}
+              key={transaction._id}
               transaction={transaction}
               transactionTime={transactionTime}
             />
