@@ -1,4 +1,12 @@
 .analyticsHeaderMinWidth{
+
     min-width: 360px;
-    padding:40px 10px 10px;
+    padding: 40px 10px 10px;
+    margin-top:80px;
+}
+
+@media (max-width: 820px) {
+    .analyticsHeaderMinWidth{
+        margin-top:10px;
+    }
 }
