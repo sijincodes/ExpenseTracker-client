@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import TextField from "@mui/material/TextField";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 import "./TransactionDatePicker.css";
 
-function TransactionDatePicker({ transactionTime }) {
-  const [userSelectedDate, setUserSelectedDate] = useState(new Date());
+function TransactionDatePicker({
+  transactionTime,
+  userSelectedDate,
+  setUserSelectedDate,
+}) {
   let views = [];
   let label = "";
   switch (transactionTime) {
@@ -29,7 +32,7 @@ function TransactionDatePicker({ transactionTime }) {
       views={views}
       value={userSelectedDate}
       onChange={(seletedDate) => {
-        setUserSelectedDate(seletedDate);
+        setUserSelectedDate(seletedDate._d);
       }}
       renderInput={(params) => <TextField size="small" {...params} />}
     />
