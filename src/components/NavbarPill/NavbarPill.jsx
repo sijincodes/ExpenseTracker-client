@@ -1,16 +1,16 @@
-import React from 'react'
+import React from "react";
 
-import "./NavbarPill.css"
+import "./NavbarPill.css";
 function NavbarPill() {
   return (
     <>
-         <button className="pillHomePage" type="button">
-                pennyWise
-                <br />
-                <span className="span-textHomepage"> TRACK YOUR EXPENSES BETTER</span>
-              </button>
+      {/* <button className="pillHomePage" type="button"> */}
+        {/* pennyWise
+        <br /> */}
+        <span className="pillHomePage"> pennyWise</span>
+      {/* </button> */}
     </>
-  )
+  );
 }
-
-export default NavbarPill
+//className="span-textHomepage"
+export default NavbarPill;

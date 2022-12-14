@@ -84,6 +84,7 @@ function LoginPage() {
           </div>
           <input type="submit" name="" value="Log In" />
         </form>
+        <span>Dont have an account ? <a href='/'>SignUp Here</a></span>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
       </div>
     </>

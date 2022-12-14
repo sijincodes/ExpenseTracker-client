@@ -73,6 +73,7 @@ function SignUpCard() {
           <input type="submit" name="submit" value="Sign Up" />
         </form>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
+        <span>Already have an account ? <a href='/login'>Login Here</a></span>
       </div>
     </>
   );

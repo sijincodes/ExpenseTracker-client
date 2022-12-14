@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap');
+
+.navbarRow{
+    display: flex;
+    width: 100%;
+    background: #e6af9c;
+}
+
+.navbarBrand{
+    font-size: 20px;
+    font-weight: 900;
+    color: #716867;
+    font-family: 'Playfair Display', serif;
+    /* padding: 1em 2em; */
+    /* margin-top:10px; */
+    /* margin-left: 0; */
+   
+  }
+.navBarProfile{
+    display: flex;
+    justify-content: flex-end;
+}
+.avatarSize {
+    width: 34;
+    height: 34
+}
+
+@media(max-width: 820px){
+	.avatarSize {
+        width: 24;
+        height: 24
+	}
+}
