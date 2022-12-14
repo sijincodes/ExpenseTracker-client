@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useSnackbar } from "notistack";
 
 import "./TransactionForm.css";
 import Toggle from "../Toggle/Toggle";
@@ -19,7 +20,7 @@ function TransactionForm({
   const [categories, setCategories] = useState([]);
   const [transactionDescription, setTransactionDescription] = useState("");
   const [transactionAmount, setTransactionAmount] = useState(0);
-  const [error, setError] = useState("");
+  const { enqueueSnackbar } = useSnackbar();
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -48,7 +49,7 @@ function TransactionForm({
       transactionAmount === 0 ||
       selectedCategory === ""
     ) {
-      setError("Please provide all details");
+      enqueueSnackbar("Please provide all details", { variant: "error" });
     } else {
       const authToken = localStorage.getItem("authToken");
       const result = await axios.post(`${baseUrl}/transaction`, body, {
@@ -59,13 +60,10 @@ function TransactionForm({
       setTransactionDescription("");
       setTransactionAmount(0);
       setselectedCategory("");
+      enqueueSnackbar("Transaction created successfully", {
+        variant: "success",
+      });
     }
-
-    // axios.post(`${baseUrl}/transaction`, body).then((response) => {
-    //   setTransactionList([...transactionList, body]);
-    // });
-
-    //income/?month=11 not sure about transactiontime above
   };
 
   return (
@@ -86,7 +84,7 @@ function TransactionForm({
         transactionAmount={transactionAmount}
         setTransactionAmount={setTransactionAmount}
       />
-      {error && <span className="spanErrorMessage"> {error}</span>}
+
       <div className="transactionButtonContainer">
         <Button handleSubmit={hideForm} variant="outlined" text="CANCEL" />
         <Button variant="contained" text="ADD" handleSubmit={handleSubmit} />

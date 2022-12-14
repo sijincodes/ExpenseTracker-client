@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import axios from "axios";
 import TextField from "@mui/material/TextField";
+import { useSnackbar } from "notistack";
 
 import "./TransactionCard.css";
 import EditIcon from "../EditIcon/EditIcon";
@@ -16,7 +17,7 @@ function TransactionCard({ transaction, transactionTime, setTransactionList }) {
   const [updatedAmount, setUpdatedAmount] = useState(
     transaction.transactionAmount
   );
-  const [error, setError] = useState("");
+  const { enqueueSnackbar } = useSnackbar();
   const shouldDateBeDisplayed = transactionTime === 2 || transactionTime === 3;
   const toggleEdit = () => {
     setIsEditable(!isEditable);
@@ -30,6 +31,9 @@ function TransactionCard({ transaction, transactionTime, setTransactionList }) {
     setTransactionList((prevTransactions) =>
       prevTransactions.filter((transaction) => transaction._id !== id)
     );
+    enqueueSnackbar("Transaction deleted successfully", {
+      variant: "success",
+    });
   };
 
   const updateTransaction = async (id) => {
@@ -39,13 +43,16 @@ function TransactionCard({ transaction, transactionTime, setTransactionList }) {
     };
 
     if (updatedDesription === "" || updatedAmount === 0) {
-      setError("Please provide all details");
+      enqueueSnackbar("Please provide all details", { variant: "error" });
     } else {
       const authToken = localStorage.getItem("authToken");
       const result = await axios.put(`${baseUrl}/transaction/${id}`, body, {
         headers: { Authorization: `Bearer ${authToken}` },
       });
-      setTransactionList((transactionList) => [result, ...transactionList]);
+      setTransactionList((transactionList) => [...transactionList, result]);
+      enqueueSnackbar("Transaction updated successfully", {
+        variant: "success",
+      });
     }
   };
 

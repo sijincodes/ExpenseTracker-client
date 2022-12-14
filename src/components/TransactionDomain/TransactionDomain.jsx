@@ -17,9 +17,12 @@ function TransactionDomain({
 }) {
   const [searchQuery, setSearchQuery] = useState("");
   const filteredTransactionList = transactionList.filter((elm) => {
-    return elm.transactionDescription
-      .toLowerCase()
-      .includes(searchQuery.toLowerCase());
+    return (
+      elm?.transactionDescription &&
+      elm.transactionDescription
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase())
+    );
   });
 
   function generateTransactionFetchURL(transactionTime, userSelectedDate) {
