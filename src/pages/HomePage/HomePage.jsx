@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "./HomePage.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -7,6 +8,9 @@ import AnalyticsDomain from "../../components/AnalyticsDomain/AnalyticsDomain";
 import Navbar from "../../components/Navbar/Navbar";
 
 function HomePage() {
+  const [transactionList, setTransactionList] = useState([]);
+  const [transactionTime, setTransactionTime] = useState(1);
+  const [userSelectedDate, setUserSelectedDate] = useState(new Date());
   return (
     <Container fluid className="fullPage">
       <Row className="rowHeader">
@@ -16,10 +20,21 @@ function HomePage() {
       </Row>
       <Row className="mainSection">
         <Col>
-          <TransactionDomain />
+          <TransactionDomain
+            transactionTime={transactionTime}
+            setTransactionTime={setTransactionTime}
+            userSelectedDate={userSelectedDate}
+            setUserSelectedDate={setUserSelectedDate}
+            transactionList={transactionList}
+            setTransactionList={setTransactionList}
+          />
         </Col>
         <Col>
-          <AnalyticsDomain />
+          <AnalyticsDomain
+            transactionTime={transactionTime}
+            userSelectedDate={userSelectedDate}
+            transactionList={transactionList}
+          />
         </Col>
       </Row>
     </Container>

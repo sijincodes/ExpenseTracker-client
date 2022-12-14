@@ -7,10 +7,14 @@ import TransactionHeader from "./TransactionHeader/TransactionHeader";
 import TransactionOverview from "./TransactionOverview/TransactionOverview";
 import { baseUrl } from "../../consts";
 
-function TransactionDomain() {
-  const [transactionTime, setTransactionTime] = useState(1);
-  const [transactionList, setTransactionList] = useState([]);
-  const [userSelectedDate, setUserSelectedDate] = useState(new Date());
+function TransactionDomain({
+  transactionTime,
+  setTransactionTime,
+  userSelectedDate,
+  setUserSelectedDate,
+  transactionList,
+  setTransactionList,
+}) {
   const [searchQuery, setSearchQuery] = useState("");
   const filteredTransactionList = transactionList.filter((elm) => {
     return elm.transactionDescription

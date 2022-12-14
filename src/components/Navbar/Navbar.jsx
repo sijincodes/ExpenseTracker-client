@@ -56,11 +56,7 @@ function Navbar1() {
             }}
           >
             {" "}
-            {isLoggedIn && (
-              <>
-                <MenuItem onClick={logOutUser}>Logout</MenuItem>
-              </>
-            )}
+            {isLoggedIn && <MenuItem onClick={logOutUser}>Logout</MenuItem>}
           </Menu>
         </Col>
       </Row>

@@ -4,7 +4,11 @@ import AnalyticsGraph from "./../AnalyticsGraph/AnalyticsGraph";
 
 import "./AnalyticsGraphCard.css";
 
-function AnalyticsGraphCard({ transactionType, transactionAmount }) {
+function AnalyticsGraphCard({
+  transactionType,
+  transactionList,
+  transactionAmount,
+}) {
   return (
     <>
       <Container className="analyticsGraphCardContainer">
@@ -12,8 +16,8 @@ function AnalyticsGraphCard({ transactionType, transactionAmount }) {
           <Col className="analyticsCard">
             <span>{transactionType}</span>
             {/* <span>{graph}</span> */}
-            <AnalyticsGraph />
-            <span>{transactionAmount}</span>
+            <AnalyticsGraph transactionList={transactionList} />
+            {/* <span>{transactionAmount}</span> */}
           </Col>
         </Row>
       </Container>

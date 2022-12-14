@@ -1,11 +1,12 @@
 import React from "react";
 import { PieChart, Pie, Cell } from "recharts";
 
-function AnalyticsPieGraph() {
+function AnalyticsPieGraph({ percent }) {
   const data = [
-    { name: "Shopping", value: 60 },
-    { name: "Rest", value: 40 },
+    { name: "Shopping", value: Number(percent) },
+    { name: "Rest", value: 100 - percent },
   ];
+
   const COLORS = ["#0088FE", "#00C49F"];
 
   return (
@@ -13,7 +14,8 @@ function AnalyticsPieGraph() {
       <PieChart width={70} height={70}>
         <Pie
           data={data}
-          cx={30}class
+          cx={30}
+          class
           cy={30}
           innerRadius={20}
           outerRadius={30}
