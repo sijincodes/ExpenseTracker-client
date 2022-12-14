@@ -23,7 +23,8 @@ function TransactionHeaderDropdown({ transactionTime, setTransactionTime }) {
             MenuProps: {
               MenuListProps: {
                 sx: {
-                  backgroundColor: "#eee3df",
+                  backgroundColor: "#dcd4d3",
+                  
                 },
               },
             },

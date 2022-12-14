@@ -9,13 +9,12 @@ import Navbar from "../../components/Navbar/Navbar";
 function HomePage() {
   return (
     <Container fluid className="fullPage">
-    <Row className="rowHeader">
-      <Col style={{width:"100%" ,paddingLeft: "0px",
-    paddingRight: "0px"}}>
-        <Navbar />
-      </Col>
-    </Row>
-      <Row className="fullPage">
+      <Row className="rowHeader">
+        <Col style={{ width: "100%", paddingLeft: "0px", paddingRight: "0px" }}>
+          <Navbar />
+        </Col>
+      </Row>
+      <Row className="mainSection">
         <Col>
           <TransactionDomain />
         </Col>

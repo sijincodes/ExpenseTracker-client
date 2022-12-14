@@ -20,7 +20,9 @@
     border-radius: 10em;
     border: none;
     outline: none;
-    background: #eee3df;
+    /* background: #eee3df; */
+    background: rgba(0,0,0,.4);
+    box-shadow: 0 15px 25px rgba(0,0,0,.5);
     position: absolute;
     left: -40px;
    /* #eee3df; */

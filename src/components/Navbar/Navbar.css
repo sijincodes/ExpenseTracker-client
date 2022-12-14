@@ -3,7 +3,7 @@
 .navbarRow{
     display: flex;
     width: 100%;
-    background: #e6af9c;
+    /* background: #e6af9c; */
 }
 
 .navbarBrand{
