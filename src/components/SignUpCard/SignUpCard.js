@@ -52,28 +52,28 @@ function SignUpCard() {
         <h2>Sign Up</h2>
         <form action="submit" method="post"  onSubmit={handleSignupSubmit}>
           <div className="inputBox">
-            <i className="material-icons" style={{ borderRadius: "10px",color:"white" }}>
+            <i className="material-icons" style={{ borderRadius: "10px",color:"#FFE6E6" }}>
               person
             </i>
             <input type="text" name="name" required="" placeholder="Username" value={name} onChange={handleName} />
           </div>
           <div className="inputBox">
-            <i className="material-icons" style={{ borderRadius: "10px",color:"white" }}>
+            <i className="material-icons" style={{ borderRadius: "10px",color:"#FFE6E6" }}>
               email
             </i>
             <input type="email" name="email" required="" placeholder="Email"  value={email} onChange={handleEmail}/>
           </div>
           <div className="inputBox">
-            <i className="material-icons" style={{ borderRadius: "10px",color:"white" }}>
+            <i className="material-icons" style={{ borderRadius: "10px",color:"#FFE6E6" }}>
               lock
             </i>
             <input type="password" name="password" required="" placeholder="Password"   value={password}
           onChange={handlePassword}/>
           </div>
-          <input type="submit" name="submit" value="Sign Up" />
+          <input  type="submit" name="submit" value="Sign Up" />
         </form>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
-        <span>Already have an account ? <a href='/login'>Login Here</a></span>
+        <span className="extraInfo">Already have an account ? <a href='/login'>Login Here</a></span>
       </div>
     </>
   );

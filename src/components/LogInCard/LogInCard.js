@@ -52,7 +52,7 @@ function LoginPage() {
           <div className="inputBox">
             <i
               className="material-icons"
-              style={{ borderRadius: "10px", color: "white" }}
+              style={{ borderRadius: "10px", color: "#FFE6E6" }}
             >
               email
             </i>
@@ -69,7 +69,7 @@ function LoginPage() {
           <div className="inputBox">
             <i
               className="material-icons"
-              style={{ borderRadius: "10px", color: "white" }}
+              style={{ borderRadius: "10px", color: "#FFE6E6" }}
             >
               lock
             </i>
@@ -84,7 +84,9 @@ function LoginPage() {
           </div>
           <input type="submit" name="" value="Log In" />
         </form>
-        <span>Dont have an account ? <a href='/'>SignUp Here</a></span>
+        <span className="extraInfo">
+          Dont have an account ? <a href="/">SignUp Here</a>
+        </span>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
       </div>
     </>
