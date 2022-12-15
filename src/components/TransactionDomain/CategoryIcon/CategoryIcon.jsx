@@ -21,7 +21,7 @@ const fetchCategoryIconName = (categoryName) => {
       return <img className="iconImage" src={refund} alt="refundIcon" />;
     case "Bonus":
       return <img className="iconImage" src={bonus} alt="bonusIcon" />;
-    case "Investment":
+    case "Investment Returns":
       return (
         <img
           className="iconImage"
@@ -35,7 +35,7 @@ const fetchCategoryIconName = (categoryName) => {
       return <img className="iconImage" src={grocery} alt="groceryIcon" />;
     case "Shopping":
       return <img className="iconImage" src={shopping} alt="shoppingIcon" />;
-    case "Dining":
+    case "Food & Dining":
       return <img className="iconImage" src={food} alt="foodIcon" />;
     case "Rent":
       return <img className="iconImage" src={rent} alt="foodIcon" />;
