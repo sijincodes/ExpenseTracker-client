@@ -12,7 +12,7 @@ function TransactionHeaderDropdown({ transactionTime, setTransactionTime }) {
   return (
     <>
       <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="input-transaction-label-id">Transaction</InputLabel>
+        <InputLabel id="input-transaction-label-id">Transaction Time</InputLabel>
         <Select
           labelId="select-transaction-label-id"
           id="select-standard"
@@ -23,7 +23,7 @@ function TransactionHeaderDropdown({ transactionTime, setTransactionTime }) {
             MenuProps: {
               MenuListProps: {
                 sx: {
-                  backgroundColor: "#dcd4d3",
+                  backgroundColor: "white"
                   
                 },
               },

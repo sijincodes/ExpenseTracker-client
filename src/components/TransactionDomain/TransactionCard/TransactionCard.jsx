@@ -8,6 +8,7 @@ import "./TransactionCard.css";
 import EditIcon from "../EditIcon/EditIcon";
 import Icons from "../Icons/Icons";
 import { baseUrl } from "../../../consts";
+import CategoryIcon from "../CategoryIcon/CategoryIcon";
 
 function TransactionCard({ transaction, transactionTime, setTransactionList }) {
   const [isEditable, setIsEditable] = useState(false);
@@ -72,9 +73,10 @@ function TransactionCard({ transaction, transactionTime, setTransactionList }) {
       <Row className="cardRow">
         <Col className="cardCol">
           <div className="innerCard">
-            <span className="material-icons " style={{ margin: "0 10px" }}>
+            {/* <span className="material-icons " style={{ margin: "0 10px" }}>
               shopping_cart
-            </span>
+            </span> */}
+            <CategoryIcon categoryName={transaction.categoryId.categoryName} />
             <TextField
               className="descriptionTextField"
               disabled={!isEditable}

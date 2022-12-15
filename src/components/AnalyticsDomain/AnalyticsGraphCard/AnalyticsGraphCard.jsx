@@ -16,7 +16,7 @@ function AnalyticsGraphCard({
           <Col className="analyticsCard">
             <span>{transactionType}</span>
             {/* <span>{graph}</span> */}
-            <AnalyticsGraph transactionList={transactionList} />
+            <AnalyticsGraph transactionList={transactionList} transactionType={transactionType} />
             {/* <span>{transactionAmount}</span> */}
           </Col>
         </Row>

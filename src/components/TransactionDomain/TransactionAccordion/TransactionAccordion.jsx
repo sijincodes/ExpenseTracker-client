@@ -19,8 +19,9 @@ export default function TransactionAccordion({
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
+         style={{backgroundColor:"#332FD0", borderRadius:"5px", boxShadow: "0 15px 25px rgba(0,0,0,.2)"}}
         >
-          <Typography>{transactionType}</Typography>
+          <Typography style={{color:"#FFE6E6" ,fontSize:"15px"}}>{transactionType}</Typography>
         </AccordionSummary>
         <AccordionDetails>
           {transactions.map((transaction) => (

@@ -23,6 +23,17 @@ function TransactionDropdown({
           value={selectedCategory}
           label="Category"
           onChange={handleChange}
+          inputProps={{
+            MenuProps: {
+              MenuListProps: {
+                sx: {
+                  backgroundColor: "white"
+                 
+                  
+                },
+              },
+            },
+          }}
         >
           {categories.map((category) => {
             return (

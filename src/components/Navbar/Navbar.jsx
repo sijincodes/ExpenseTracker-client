@@ -60,8 +60,11 @@ function Navbar1() {
             PaperProps={{
                                         style: {
                                             transform: 'translateX(30px) translateY(35px)',
+                                            backgroundColor: "#dcd4d3",
                                         }
                                     }}
+
+                                    
           >
             {" "}
             {isLoggedIn && <MenuItem onClick={logOutUser}>Logout</MenuItem>}

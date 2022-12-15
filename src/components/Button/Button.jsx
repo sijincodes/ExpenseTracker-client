@@ -5,7 +5,7 @@ import "./Button.css";
 
 export default function BasicButtons({ handleSubmit, text, variant }) {
   return (
-    <Button className="buttonSpace" variant={variant} onClick={handleSubmit}>
+    <Button className="buttonSpace" style={{backgroundColor:"#332FD0",color:"#FFE6E6"}}  variant={variant} onClick={handleSubmit}>
       {text}
     </Button>
   );

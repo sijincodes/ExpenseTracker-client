@@ -5,7 +5,8 @@
 .searchBoxInputBox{
     width: 100%;
     border: 0px solid;
-    background-color: rgb(246, 243, 243);
+    background-color: #C7CBE6 ;
+    box-shadow: 0 15px 25px rgba(0,0,0,.2);
     padding:7px 10px;
     border-radius: 5px;
 }

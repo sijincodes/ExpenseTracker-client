@@ -2,7 +2,7 @@ import React from "react";
 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 
-function AnalyticsGraph({ transactionList }) {
+function AnalyticsGraph({ transactionList,transactionType }) {
   const data = [
     {
       _id: "1",
@@ -206,10 +206,10 @@ function AnalyticsGraph({ transactionList }) {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="_id" tick={{ fontSize: 10 }} />
+        <XAxis dataKey="_id" tick={{ fontSize: 10 }} interval={0}/>
         <YAxis tick={{ fontSize: 10 }} />
         <Tooltip />
-        <Bar dataKey="total" fill="#8884d8" />
+      {transactionType==='Expense' ? (<Bar dataKey="total" fill="#EBBF58" />) :<Bar dataKey="total" fill="#769353" />}
       </BarChart>
     </>
   );
