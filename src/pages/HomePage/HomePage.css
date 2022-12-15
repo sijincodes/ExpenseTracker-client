@@ -3,8 +3,9 @@
    
     padding: 20px 0px;
     margin-left:0;
-    background: rgba(186, 163, 163, 0.4);
-	
+    /* background: rgba(186, 163, 163, 0.4); */
+    background: rgba(51,47,208);
+	/* rgb(102,115,133) */
 	/* box-shadow: 0 15px 25px rgba(0,0,0,.5); */
 }
 

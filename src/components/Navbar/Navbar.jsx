@@ -37,12 +37,12 @@ function Navbar1() {
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
           >
-            <Avatar sx={{ width: 24, height: 24 }}>
+            <Avatar sx={{ width: 30, height: 30 , bgcolor:'#f3e5f5',color:'#332FD0'}}>
               {user && user.name[0]}
 
             </Avatar>
           </Button>
-          {/* <span>Hi {user.name[0].toUpperCase() + user.name.slice(1)}</span> */}
+          <span className="navbarText">{user.name[0].toUpperCase() + user.name.slice(1)}</span>
           <Menu
             id="logout-positioned-menu"
             aria-labelledby="logout-positioned-button"
