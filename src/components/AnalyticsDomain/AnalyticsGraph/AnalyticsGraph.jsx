@@ -206,7 +206,7 @@ function AnalyticsGraph({ transactionList,transactionType }) {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="_id" tick={{ fontSize: 10 }} interval={0}/>
+        <XAxis dataKey="_id" tick={{ fontSize: 10 }}/>
         <YAxis tick={{ fontSize: 10 }} />
         <Tooltip />
       {transactionType==='Expense' ? (<Bar dataKey="total" fill="#EF9A53" />) :<Bar dataKey="total" fill="#367E18" />}

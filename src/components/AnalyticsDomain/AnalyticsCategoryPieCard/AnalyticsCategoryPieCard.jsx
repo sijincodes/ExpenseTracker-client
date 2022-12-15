@@ -35,7 +35,7 @@ function AnalyticsCategoryPieCard({ pie, category, amount, percent }) {
             <span className="spanPie">Total Amount : </span><span><strong>€{amount}</strong></span>
           </Col>
           <Col className="pieCardPercentValue">
-          <span className="spanPie">Percentage : </span><span><strong>{percent}%</strong></span>
+          <span className="spanPie">Percentage :</span><span><strong> {percent}%</strong></span>
           </Col>
         </Row>
       </Container>

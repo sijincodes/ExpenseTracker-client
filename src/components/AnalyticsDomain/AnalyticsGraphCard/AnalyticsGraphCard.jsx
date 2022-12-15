@@ -14,7 +14,7 @@ function AnalyticsGraphCard({
       <Container className="analyticsGraphCardContainer">
         <Row style={{ width: "100%" }}>
           <Col className="analyticsCard">
-            <span>{transactionType}</span>
+            <span><strong>{transactionType}</strong></span>
             {/* <span>{graph}</span> */}
             <AnalyticsGraph transactionList={transactionList} transactionType={transactionType} />
             {/* <span>{transactionAmount}</span> */}

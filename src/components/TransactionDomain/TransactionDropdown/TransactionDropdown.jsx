@@ -27,9 +27,7 @@ function TransactionDropdown({
             MenuProps: {
               MenuListProps: {
                 sx: {
-                  backgroundColor: "white"
-                 
-                  
+                  backgroundColor: "white",
                 },
               },
             },

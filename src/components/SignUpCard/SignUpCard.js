@@ -7,7 +7,7 @@ function SignUpCard() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [errorMessage, setErrorMessage] = useState(undefined);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
 
@@ -47,33 +47,63 @@ function SignUpCard() {
 
   return (
     <>
-    
-    <div className="box">
+      <div className="box">
         <h2>Sign Up</h2>
-        <form action="submit" method="post"  onSubmit={handleSignupSubmit}>
+        <form action="submit" method="post" onSubmit={handleSignupSubmit}>
           <div className="inputBox">
-            <i className="material-icons" style={{ borderRadius: "10px",color:"#FFE6E6" }}>
+            <i
+              className="material-icons"
+              style={{ borderRadius: "10px", color: "#FFE6E6" }}
+            >
               person
             </i>
-            <input type="text" name="name" required="" placeholder="Username" value={name} onChange={handleName} />
+            <input
+              type="text"
+              name="name"
+              required=""
+              placeholder="Username"
+              value={name}
+              onChange={handleName}
+            />
           </div>
           <div className="inputBox">
-            <i className="material-icons" style={{ borderRadius: "10px",color:"#FFE6E6" }}>
+            <i
+              className="material-icons"
+              style={{ borderRadius: "10px", color: "#FFE6E6" }}
+            >
               email
             </i>
-            <input type="email" name="email" required="" placeholder="Email"  value={email} onChange={handleEmail}/>
+            <input
+              type="email"
+              name="email"
+              required=""
+              placeholder="Email"
+              value={email}
+              onChange={handleEmail}
+            />
           </div>
           <div className="inputBox">
-            <i className="material-icons" style={{ borderRadius: "10px",color:"#FFE6E6" }}>
+            <i
+              className="material-icons"
+              style={{ borderRadius: "10px", color: "#FFE6E6" }}
+            >
               lock
             </i>
-            <input type="password" name="password" required="" placeholder="Password"   value={password}
-          onChange={handlePassword}/>
+            <input
+              type="password"
+              name="password"
+              required=""
+              placeholder="Password"
+              value={password}
+              onChange={handlePassword}
+            />
           </div>
-          <input  type="submit" name="submit" value="Sign Up" />
+          <input type="submit" name="submit" value="Sign Up" />
         </form>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
-        <span className="extraInfo">Already have an account ? <a href='/login'>Login Here</a></span>
+        <span className="extraInfo">
+          Already have an account ? <a href="/login">Login Here</a>
+        </span>
       </div>
     </>
   );

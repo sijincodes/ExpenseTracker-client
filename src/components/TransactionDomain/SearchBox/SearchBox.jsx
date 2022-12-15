@@ -3,8 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 import "./SearchBox.css";
 
-function SearchBox({setSearchQuery,searchQuery}) {
- 
+function SearchBox({ setSearchQuery, searchQuery }) {
   return (
     <Container className="searchBoxContainer">
       <Row>

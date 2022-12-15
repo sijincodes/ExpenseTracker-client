@@ -56,14 +56,13 @@ const fetchCategoryIconName = (categoryName) => {
         <img className="iconImage" src={miscIncome} alt="miscIncomeIcon" />
       );
     default:
-      return "euro_symbol";
+      return miscIncome;
   }
 };
 
 function CategoryIcon({ categoryName }) {
   return (
     <>
-      {/* <span class="material-icons">{fetchCategoryIconName(categoryName)}</span> */}
       <div>{fetchCategoryIconName(categoryName)}</div>
     </>
   );

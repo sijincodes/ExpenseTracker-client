@@ -15,15 +15,14 @@ export default function Toggle({ transactionToggle, setTransactionToggle }) {
       onChange={handleToggle}
       aria-label="transaction Toggle"
       inputProps={{
-            MenuProps: {
-              MenuListProps: {
-                sx: {
-                  backgroundColor: "#827397",
-                  
-                },
-              },
+        MenuProps: {
+          MenuListProps: {
+            sx: {
+              backgroundColor: "#827397",
             },
-          }}
+          },
+        },
+      }}
     >
       <ToggleButton value="income">Income</ToggleButton>
       <ToggleButton value="expense">Expense</ToggleButton>

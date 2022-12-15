@@ -29,7 +29,6 @@ function Navbar1() {
           <span className="navbarBrand"> pennyWise</span>
         </Col>
         <Col className="navBarProfile">
-        
           <Button
             id="logout-positioned-button"
             aria-controls={open ? "logout-positioned-menu" : undefined}
@@ -37,12 +36,20 @@ function Navbar1() {
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
           >
-            <Avatar sx={{ width: 30, height: 30 , bgcolor:'#f3e5f5',color:'#332FD0'}}>
+            <Avatar
+              sx={{
+                width: 30,
+                height: 30,
+                bgcolor: "#f3e5f5",
+                color: "#332FD0",
+              }}
+            >
               {user && user.name[0]}
-
             </Avatar>
           </Button>
-          <span className="navbarText">{user.name[0].toUpperCase() + user.name.slice(1)}</span>
+          <span className="navbarText">
+            {user.name[0].toUpperCase() + user.name.slice(1)}
+          </span>
           <Menu
             id="logout-positioned-menu"
             aria-labelledby="logout-positioned-button"
@@ -58,13 +65,11 @@ function Navbar1() {
               horizontal: "left",
             }}
             PaperProps={{
-                                        style: {
-                                            transform: 'translateX(30px) translateY(35px)',
-                                            backgroundColor: "#dcd4d3",
-                                        }
-                                    }}
-
-                                    
+              style: {
+                transform: "translateX(30px) translateY(40px)",
+                backgroundColor: "white",
+              },
+            }}
           >
             {" "}
             {isLoggedIn && <MenuItem onClick={logOutUser}>Logout</MenuItem>}
