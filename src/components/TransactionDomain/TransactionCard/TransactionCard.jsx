@@ -73,9 +73,6 @@ function TransactionCard({ transaction, transactionTime, setTransactionList }) {
       <Row className="cardRow">
         <Col className="cardCol">
           <div className="innerCard">
-            {/* <span className="material-icons " style={{ margin: "0 10px" }}>
-              shopping_cart
-            </span> */}
             <CategoryIcon categoryName={transaction.categoryId.categoryName} />
             <TextField
               className="descriptionTextField"

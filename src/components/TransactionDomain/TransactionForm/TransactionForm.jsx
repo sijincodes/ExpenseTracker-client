@@ -16,6 +16,7 @@ function TransactionForm({
   userSelectedDate,
 }) {
   const [selectedCategory, setselectedCategory] = useState("");
+  const [selectedCategoryName, setSelectedCategoryName] = useState("");
   const [transactionToggle, setTransactionToggle] = useState("income");
   const [categories, setCategories] = useState([]);
   const [transactionDescription, setTransactionDescription] = useState("");
@@ -56,7 +57,13 @@ function TransactionForm({
         headers: { Authorization: `Bearer ${authToken}` },
       });
 
-      if (result.data) setTransactionList([...transactionList, body]);
+      if (result.data) {
+        body.categoryId = {
+          _id: selectedCategory,
+          categoryName: selectedCategoryName,
+        };
+        setTransactionList([...transactionList, body]);
+      }
       setTransactionDescription("");
       setTransactionAmount(0);
       setselectedCategory("");
@@ -77,6 +84,7 @@ function TransactionForm({
         setCategories={setCategories}
         selectedCategory={selectedCategory}
         setselectedCategory={setselectedCategory}
+        setSelectedCategoryName={setSelectedCategoryName}
       />
       <TransactionTextField
         transactionDescription={transactionDescription}

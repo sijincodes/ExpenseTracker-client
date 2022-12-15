@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import salary from "./../../../Assets/salary.svg";
 import refund from "./../../../Assets/refund.svg";
 import bonus from "./../../../Assets/bonus.svg";
@@ -61,9 +61,13 @@ const fetchCategoryIconName = (categoryName) => {
 };
 
 function CategoryIcon({ categoryName }) {
+  const [category, setCategory] = useState(<></>);
+  useEffect(() => {
+    setCategory(fetchCategoryIconName(categoryName));
+  }, [categoryName]);
   return (
     <>
-      <div>{fetchCategoryIconName(categoryName)}</div>
+      <div>{category}</div>
     </>
   );
 }

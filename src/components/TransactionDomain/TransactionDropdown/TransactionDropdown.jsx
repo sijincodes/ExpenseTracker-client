@@ -8,9 +8,14 @@ function TransactionDropdown({
   categories,
   selectedCategory,
   setselectedCategory,
+  setSelectedCategoryName,
 }) {
   const handleChange = (event) => {
     setselectedCategory(event.target.value);
+    setSelectedCategoryName(
+      categories.filter((category) => category._id === event.target.value)[0]
+        .categoryName
+    );
   };
 
   return (
