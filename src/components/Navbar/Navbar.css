@@ -19,6 +19,7 @@
 .navBarProfile{
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 .avatarSize {
     width: 34;
