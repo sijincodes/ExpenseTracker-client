@@ -1,0 +1,14 @@
+.iconImage{
+    height: 70px;
+    width: 40px;
+    margin-right:5px
+}
+
+
+@media(max-width: 820px){
+.iconImage{
+    height: 50px;
+    width: 25px;
+    margin-right:5px
+}
+}

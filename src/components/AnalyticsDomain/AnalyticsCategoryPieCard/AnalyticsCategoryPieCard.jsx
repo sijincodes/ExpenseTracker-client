@@ -31,11 +31,11 @@ function AnalyticsCategoryPieCard({ pie, category, amount, percent }) {
             <AnalyticsPieGraph percent={percent} />
           </Col>
           <Col className="pieCardDetails">
-            <span>{fetchCategory(categories, category)?.categoryName}</span>
-            <span>{amount}</span>
+            <span className="spanPie">Category Name : </span><span><strong>{fetchCategory(categories, category)?.categoryName}</strong></span>
+            <span className="spanPie">Total Amount : </span><span><strong>€{amount}</strong></span>
           </Col>
           <Col className="pieCardPercentValue">
-            <span>{percent}%</span>
+          <span className="spanPie">Percentage : </span><span><strong>{percent}%</strong></span>
           </Col>
         </Row>
       </Container>

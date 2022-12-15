@@ -8,6 +8,14 @@
 .pieCardPercentValue{
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+}
+.spanPie {
+   
+        color: #a4a3a6;
+        font-size: 13px;
+        font-weight: bold;
+    
 }
 
 .analyticsCategoryPieCardContainer{
@@ -18,8 +26,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        background: rgba(175, 173, 173, 0.2);
-        box-shadow: 0 15px 25px rgba(0,0,0,.1); 
+        background: rgba(132,140,207, 0.4);
+        box-shadow: 0 15px 25px rgba(0,0,0,.2);
         border-radius: 5px;
         box-sizing: border-box; 
 }

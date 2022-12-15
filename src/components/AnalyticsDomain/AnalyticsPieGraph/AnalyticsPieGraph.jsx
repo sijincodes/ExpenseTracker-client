@@ -3,11 +3,11 @@ import { PieChart, Pie, Cell } from "recharts";
 
 function AnalyticsPieGraph({ percent }) {
   const data = [
-    { name: "Shopping", value: Number(percent) },
+    { name: "IncomingData", value: Number(percent) },
     { name: "Rest", value: 100 - percent },
   ];
 
-  const COLORS = ["#0088FE", "#00C49F"];
+  const COLORS = ["#EF9A53", "#F5D5AE"];
 
   return (
     <>
