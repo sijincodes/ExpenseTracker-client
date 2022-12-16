@@ -50,7 +50,7 @@ function TransactionCard({ transaction, transactionTime, setTransactionList }) {
       const result = await axios.put(`${baseUrl}/transaction/${id}`, body, {
         headers: { Authorization: `Bearer ${authToken}` },
       });
-      setTransactionList((transactionList) => [...transactionList, result]);
+      setTransactionList((transactionList) => [...transactionList]);
       enqueueSnackbar("Transaction updated successfully", {
         variant: "success",
       });
@@ -108,7 +108,7 @@ function TransactionCard({ transaction, transactionTime, setTransactionList }) {
                   />
                   <Icons
                     text="close"
-                    handleSubmit={() => {
+                    handleClick={() => {
                       setUpdatedDesription(transaction.transactionDescription);
                       setUpdatedAmount(transaction.transactionAmount);
                       toggleEdit();

@@ -58,11 +58,11 @@ function TransactionForm({
       });
 
       if (result.data) {
-        body.categoryId = {
+        result.data.categoryId = {
           _id: selectedCategory,
           categoryName: selectedCategoryName,
         };
-        setTransactionList([...transactionList, body]);
+        setTransactionList([...transactionList, result.data]);
       }
       setTransactionDescription("");
       setTransactionAmount(0);
