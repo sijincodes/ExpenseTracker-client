@@ -1,6 +1,6 @@
 # pennyWise - Expense Tracker
 
-This is an application, where the user can track their various sources of incomes and expenses efficiently over period time - Daily, Monthly and Yearly
+This is a responsive application, where the user can track their various sources of incomes and expenses efficiently over period time - Daily, Monthly and Yearly
 
 ## Screenshots
 
@@ -17,6 +17,7 @@ This is an application, where the user can track their various sources of income
 - Under Analytics section, User can view the Bar graph for Monthly & Yearly Expenses and Income along with Pie graph for different expense categories
 - Based on the Transaction Time selected , the graph changes on the calendar selection
 - There is Overview section for Total expense, income and Net which changes value based on Transaction time
+- All device friendly application!
 
  <br /> 
  
