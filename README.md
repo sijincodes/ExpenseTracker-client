@@ -5,8 +5,11 @@ This is a responsive application, where the user can track their various sources
 ## Screenshots
 
 <kbd>
-<img src="https://res.cloudinary.com/djxzl8ay2/image/upload/v1673219778/JT/pennyWise_pbty3g.png" alt="snapshot">
+<img src="https://res.cloudinary.com/djxzl8ay2/image/upload/v1673256430/JT/pennyWise_osll0p.png" alt="snapshot">
 </kbd>
+
+## 🔥 Check out the application :
+- https://penny-wise-sm.netlify.app/login
 
 ## 🚀 Features
 
